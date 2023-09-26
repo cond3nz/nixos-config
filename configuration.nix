@@ -116,6 +116,8 @@
     dracula-theme
     dracula-icon-theme
     git
+    gnutar
+    p7zip
   ];
   
   # Some programs need SUID wrappers, can be configured further or are

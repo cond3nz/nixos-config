@@ -3,7 +3,11 @@
 # and in the NixOS manual (accessible by running `nixos-help`).
 
 { config, pkgs, ... }:
-
+let
+  unstableTarball =
+    fetchTarball
+      https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz;
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -38,7 +42,8 @@
   nixpkgs.config = {
   allowUnfree = true;
   packageOverrides = pkgs: {
-    unstable = import <nixos-unstable> {
+    unstable = import unstableTarball {
+      config = config.nixpkgs.config;
     };
    };
   };

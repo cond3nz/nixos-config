@@ -97,6 +97,7 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.cond3nz = {
     isNormalUser = true;
+    initialPassword = "1234";
     extraGroups = [ "qemu-libvirtd" "libvirtd" 
          "wheel" "video" "audio" "disk" "networkmanager" 
        ]; # Enable ‘sudo’ for the user.

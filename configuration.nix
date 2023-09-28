@@ -35,7 +35,14 @@
   # };
   
   # Enable unnfree repo
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+  allowUnfree = true;
+  packageOverrides = pkgs: {
+    unstable = import <nixos-unstable> {
+    };
+   };
+  };
+
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -98,6 +105,7 @@
       xfce.parole
       qemu_full
       virt-manager
+      unstable.bun
     ];
     shell = pkgs.fish;
   };

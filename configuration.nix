@@ -135,6 +135,7 @@ in
     git
     gnutar
     p7zip
+    helix
   ];
   
   # Some programs need SUID wrappers, can be configured further or are
